@@ -3,7 +3,7 @@ var app = express()
 const fs = require('fs')
 const morgan = require('morgan')
 
-const db = require('./src/services/database.js')
+const logdb = require('./src/services/database.js')
 // Serve static HTML public directory
 app.use(express.static('./public'))
 app.use(express.json());
