@@ -232,6 +232,7 @@ function multipleCoins() {
 
 }
 
+//guess flip function
 function guessFlip(guess) {
     fetch('http://localhost:5000/app/flip/call/', {
         body: JSON.stringify({
