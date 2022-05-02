@@ -2,7 +2,7 @@
 /* This sets the active button off from the inactive buttons. */
 button.active {
   background: black;
-  color: white;
+  color: cadetblue;
 }
 /* This shows the active div. */
 div.active {
