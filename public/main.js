@@ -178,13 +178,11 @@ const coin = document.getElementById("coin");
 coin.addEventListener("click", flipImage);
 function flipImage() {
     const url = "http://localhost:5000/app/flip/"
-
     fetch(url)
         .then(function (response) {
             return response.json()
         })
-        .then(function (result) {
-            
+        .then(function (result) { 
             document.getElementById("flipResult").innerHTML = result.flip;
             document.getElementById("quarter").setAttribute("src", "assets/img/" + result.flip + ".png")
         })
