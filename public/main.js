@@ -240,10 +240,8 @@ function guessFlip(guess) {
         .then(function (result) {
             document.getElementById("guessPickText").innerHTML = result.call;
             document.getElementById("guessPickImage").setAttribute("src", "assets/img/" + result.call + ".png")
-
             document.getElementById("guessActualResultText").innerHTML = result.flip;
             document.getElementById("guessActualResultImage").setAttribute("src", "assets/img/" + result.flip + ".png");
-
             document.getElementById("winorlose").innerHTML = "You " + result.result;
         })
 }
