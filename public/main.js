@@ -173,6 +173,7 @@ function coinList(array) {
   return text
 }
 
+//one coin flip
 const coin = document.getElementById("coin");
 coin.addEventListener("click", flipImage);
 function flipImage() {
