@@ -34,7 +34,6 @@ if (args.log == 'false') {
 } else {
 // Use morgan for logging to files
     const logdir = './log/';
-
     if (!fs.existsSync(logdir)){
         fs.mkdirSync(logdir);
     }
@@ -109,31 +108,26 @@ app.get("/app/", (req, res, next) => {
     res.json({"message":"Your API works! (200)"});
 	res.status(200);
 });
-
 // Endpoint /app/flip/ that returns JSON {"flip":"heads"} or {"flip":"tails"} 
 // corresponding to the results of the random coin flip.
 app.get('/app/flip/', (req, res) => {
     const flip = coinFlip()
     res.status(200).json({ "flip" : flip })
 });
-
 app.post('/app/flip/coins/', (req, res, next) => {
     const flips = coinFlips(req.body.number)
     const count = countFlips(flips)
     res.status(200).json({"raw":flips,"summary":count})
 })
-
 app.get('/app/flips/:number', (req, res, next) => {
     const flips = coinFlips(req.params.number)
     const count = countFlips(flips)
     res.status(200).json({"raw":flips,"summary":count})
 });
-
 app.post('/app/flip/call/', (req, res, next) => {
     const game = flipACoin(req.body.guess)
     res.status(200).json(game)
 })
-
 app.get('/app/flip/call/:guess(heads|tails)/', (req, res, next) => {
     const game = flipACoin(req.params.guess)
     res.status(200).json(game)
