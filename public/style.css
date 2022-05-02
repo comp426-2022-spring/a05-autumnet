@@ -2,6 +2,7 @@
 button.active {
   background: black;
   color: cadetblue;
+  outline-color: grey;
 }
 /* This shows the active div. */
 div.active {
