@@ -231,3 +231,27 @@ function multipleCoins() {
     })
 
 }
+
+function guessFlip(guess) {
+    fetch('http://localhost:5000/app/flip/call/', {
+        body: JSON.stringify({
+            "guess": guess
+        }),
+        headers: {
+            "Content-Type": "application/json",
+        },
+        method: "post"
+    })
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (result) {
+            document.getElementById("guessPickText").innerHTML = result.call;
+            document.getElementById("guessPickImage").setAttribute("src", "assets/img/" + result.call + ".png")
+
+            document.getElementById("guessActualResultText").innerHTML = result.flip;
+            document.getElementById("guessActualResultImage").setAttribute("src", "assets/img/" + result.flip + ".png");
+
+            document.getElementById("winorlose").innerHTML = "You " + result.result;
+        })
+}
