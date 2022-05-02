@@ -189,3 +189,5 @@ function flipImage() {
             document.getElementById("quarter").setAttribute("src", "assets/img/" + result.flip + ".png")
         })
 }
+
+//multiple coin flips
