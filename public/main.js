@@ -191,10 +191,8 @@ function flipImage() {
 //multiple coin flips
 const sub = document.getElementById("multiSubmit")
 sub.addEventListener("click", multipleCoins)
-
 function multipleCoins() {
     const num = document.querySelector('#number').value
-
     fetch('http://localhost:5000/app/flip/coins/', {
         body: JSON.stringify({
             "number": num
@@ -211,8 +209,6 @@ function multipleCoins() {
         
         document.getElementById("flipResultHead").innerHTML = result.summ.heads;
         document.getElementById("flipResultTail").innerHTML = result.summ.tails;
-
-        // document.getElementById('all_results').innerHTML = `<p>${result.raw}</p>`
         let all_res = ""
         document.getElementById('all_results').innerHTML = ""
         for (let i = 0; i < result.raw.length; i++) {
@@ -222,12 +218,9 @@ function multipleCoins() {
             img.style = "width: 80px"
             document.getElementById('all_results').appendChild(img);
             all_res += " " + result.raw[i]
-            
         }
         document.getElementById('all_results_text').innerHTML = all_res
-
     })
-
 }
 
 //guess flip function
