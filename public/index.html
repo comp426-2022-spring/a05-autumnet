@@ -25,6 +25,7 @@
 	<meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
   </head>
+  
   <body>
     <nav>
       <button id="homenav">Home</button>
@@ -32,18 +33,62 @@
       <button id="multinav">Flip multiple coins</button>
       <button id="guessnav">Guess the result</button>
     </nav>
+
     <div id="home">
-      
-    </div>    
+      <h1>Directions</h1>
+      <h2>Click a button to start a game.</h2> 
+      <div>
+        <h3 style="display:inline-block; margin-left: 50px; padding: 0px;">Flip One Coin:</h3>
+        <p style="display:inline-block;">Flip a coin</p>
+        <h3 style="display:inline-block; margin-left: 50px;">Flip Multiple Coins:</h3>
+      <p style="display:inline-block;">Flip a number of coins based on an input value</p>
+        <h3 style="display:inline-block; margin-left: 50px;">Guess the Result:</h3>
+        <p style="display:inline-block;">Call heads or tails</p>
+      </div>
+    </div>
+
     <div id="single" class="hidden">
-      
+      <h1>Flip One Coin</h1>
+      <button id="coin">Flip!</button> 
+      <br>
+      <p>Result: <span id="flipResult">?</span></p>
+      <img src="assets/img/coin.png" id="quarter" class="bigcoin" alt="Coin Image">
     </div>
+
     <div id="multi" class="hidden">
-      
+      <h1>Flip many coins</h1>
+      <input type="number" id="number" placeholder="Number of Flips" />
+      <button type="button" id="multiSubmit">Flip!</button>
+      <p>Result:</p>
+      <p>Heads:<span id="flipResultHead">?</span></p>
+      <p>Tails:<span id="flipResultTail">?</span></p>
+      <br>
+      <h2>All Flips: </h2>
+      <p>List: </p><div id="all_results_text"></div>
+      <p>Visual: </p><div style="width: 10px" id="all_results"></div>
     </div>
+
     <div id="guess" class="hidden">
-      
+
+      <h1>Guess the Result:</h1>
+      <h2>Pick your guess:</h2>
+      <button type="button" id="guessHeads" onclick="guessFlip('heads')">HEADS</button>
+      <button type="button" id="guessTails" onclick="guessFlip('tails')">TAILS</button>
+      <h2>Results: </h2>
+      <h3>Your Pick: </h3>
+      <p><span id="guessPickText"></span></p>
+      <img src="assets/img/coin.png" id="guessPickImage" class="smallcoin"
+        alt="coin image">
+
+      <h3>Actual Result: </h3>
+      <!--add function results-->
+      <p><span id="guessActualResultText"></span></p>
+      <img src="assets/img/coin.png" id="guessActualResultImage"
+        class="smallcoin" alt="coin image">
+      <h3><span id="winorlose"></span></h3>
     </div>
+
 	<script src="main.js"></script>
   </body>
+
 </html>
